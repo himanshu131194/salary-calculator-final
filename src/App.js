@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import first from './first.svg';
+import device from './devices.svg';
+import discussion from './discussion.svg';
 import './App.css';
 //import fetch from 'fetch';
 import Header from './components/Header';
@@ -14,39 +17,81 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <Header/>
-        </header>
+        <Header/>
         <div className="Salary-content">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-          <div className="App-intro">
-            <div className="form-group">
-              <label>Designation:
-                <input type="text" name="designation" className="form-control"/>
-              </label>
+          <div className="top_content">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">How much are your skills worth?</h1>
+            <p className="first_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat</p>
+            <p className="second_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod</p>
+            <div className="App-intro">
+              <form className="">
+                <div className="custom_form">
+                <div className="form-group">
+                    <input type="text" name="designation" className="form-control" placeholder="Designation"/>
+                </div>
+                <div className="form-group">
+                    <input type="text" name="location" className="form-control" placeholder="Location"/>
+                </div>
+                <div className="form-group">
+                    <select name="experience" className="form-control" placeholder="Experience">
+                      <option value="" default>Experience in Years</option>
+                      <option value="1">0-3</option>
+                      <option value="2">3-6</option>
+                      <option value="3">6-10</option>
+                      <option value="4">10+</option>
+                    </select>
+              </div>
+              <div className="form-group">
+                  <button className="submit form-control" name="submit">Estimate Salary</button>
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="result_box"></div>
+        <div className="bottom_content">
+          <div className="content_box">
+            <div className="box_head">
+              <div className="box_title">Lorem Ipsum</div>
+              <img src={first} className="box_img" alt="first" />
             </div>
-            <div className="form-group">
-              <label>Location:
-                <input type="text" name="location" className="form-control"/>
-              </label>
+            <div className="box_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud
             </div>
-            <div className="form-group">
-              <label>Experience:
-                <select name="experience" className="form-control">
-                  <option value="1" default>0-3</option>
-                  <option value="2">3-6</option>
-                  <option value="3">6-10</option>
-                  <option value="4">10+</option>
-                </select>
-              </label>
+          </div>
+          <div className="content_box">
+            <div className="box_head">
+              <div className="box_title">Lorem Ipsum</div>
+              <img src={device} className="box_img" alt="devices" />
+            </div>
+            <div className="box_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud
+            </div>
+          </div>
+          <div className="content_box">
+            <div className="box_head">
+              <div className="box_title">Lorem Ipsum</div>
+              <img src={discussion} className="box_img" alt="discussion" />
+            </div>
+            <div className="box_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud
             </div>
           </div>
         </div>
-        <footer className="App-footer">
-          <Footer/>
-        </footer>
       </div>
+      <Footer/>
+    </div>
     );
   }
 }
