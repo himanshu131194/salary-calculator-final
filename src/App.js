@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import first from './first.svg';
 import device from './devices.svg';
 import discussion from './discussion.svg';
+import computer from './computer.svg';
 import './App.css';
 //import fetch from 'fetch';
 import Header from './components/Header';
@@ -53,7 +54,13 @@ class App extends Component {
             </form>
           </div>
         </div>
-        <div className="result_box"></div>
+        <div className="result_box">
+          <div className="result_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</div>
+          <div className="result_content">
+            <img className="result_img" alt="graph" src={computer} />
+            <p className="result_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor</p>
+          </div>
+        </div>
         <div className="bottom_content">
           <div className="content_box">
             <div className="box_head">

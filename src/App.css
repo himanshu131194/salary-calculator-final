@@ -14,10 +14,11 @@
 }
 
 .custom_form{
-  margin-bottom:3rem;
+  margin-bottom:8rem;
   font-size: large;
   display:flex;
   justify-content: space-around;
+  padding: 0 8%;
 }
 
 @keyframes App-logo-spin {
@@ -48,9 +49,42 @@
   border-color: #218bfd;
 }
 
+.result_box{
+  width: 50%;
+  height: 150px;
+  background-color: white;
+  box-shadow: 2px 1px 10px 1px lightgrey;
+  position: absolute;
+  left: 25%;
+  margin-top: -14%;
+  color: #7A7D80;
+  padding: 25px;
+  font-size:12px;
+}
+
+.result_title{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.result_content{
+  display:flex;
+  justify-content: space-around;
+  padding: 10px 40px;
+}
+
+.result_img{
+  height:75px;
+}
+
+.result_text{
+  margin-top:4%;
+}
+
 .bottom_content{
   display:flex;
   justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
 .content_box{
