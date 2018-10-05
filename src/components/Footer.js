@@ -4,6 +4,7 @@ import google from '../google-plus.png';
 import linkedin from '../linkedin-logo.png';
 import twitter from '../twitter-logo.png';
 import youtube from '../youtube-logo.png';
+import googleplay from '../GooglePlay.png';
 import './Footer.css';
 
 class Footer extends Component {
@@ -73,7 +74,7 @@ class Footer extends Component {
       						<div className="contact margin_top_10">Easy Job access on the go</div>
       						<div className="inline-block social-icon">
       							<a href="https://play.google.com/store/apps/details?id=com.teamlease.jobs&amp;referrer=utm_source%3Dfooter%26utm_medium%3Dweb%26utm_campaign%3Dweb" data-toggle="toggle" title="Try our App on Google Play Store">
-      								<img src={twitter} className="social_img" alt="twitter" />
+      								<img src={googleplay} className="social_img gplay" alt="twitter" />
       							</a>
       						</div>
 			         </div>
