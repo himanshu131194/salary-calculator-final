@@ -1,0 +1,163 @@
+
+> clinet@0.1.0 start /home/user-143/Documents/Salarycalculator/clinet
+> react-scripts start
+
+Something is already running on port 3000.
+
+> clinet@0.1.0 start /home/user-143/Documents/Salarycalculator/clinet
+> react-scripts start
+
+Starting the development server...
+
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Failed to compile.
+
+./src/Back-image.jpg
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/Back-image.jpg'
+Compiling...
+Failed to compile.
+
+./src/Back-image.jpg
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/Back-image.jpg'
+Compiling...
+Failed to compile.
+
+./src/Back-image.jpg
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/Back-image.jpg'
+Compiling...
+Failed to compile.
+
+./src/Back-image.jpg
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/Back-image.jpg'
+Compiling...
+Failed to compile.
+
+./src/Back-image.jpg
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/Back-image.jpg'
+Compiling...
+Failed to compile.
+
+./src/Back-image.jpg
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/Back-image.jpg'
+Compiling...
+Failed to compile.
+
+./src/GooglePlay.png
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/GooglePlay.png'
+Compiling...
+Failed to compile.
+
+./src/GooglePlay.png
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/GooglePlay.png'
+Compiling...
+Failed to compile.
+
+./src/GooglePlay.png
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/GooglePlay.png'
+Compiling...
+Failed to compile.
+
+./src/GooglePlay.png
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/GooglePlay.png'
+Compiling...
+Failed to compile.
+
+./src/facebook-logo.png
+Module build failed: Error: ENOENT: no such file or directory, open '/home/user-143/Documents/Salarycalculator/clinet/src/facebook-logo.png'
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Compiled with warnings.
+
+./src/components/Header.js
+  Line 94:  Elements with the ARIA role "combobox" must have the following attributes defined: aria-controls,aria-expanded  jsx-a11y/role-has-required-aria-props
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
