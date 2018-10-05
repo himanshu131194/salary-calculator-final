@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import first from './first.svg';
-import device from './devices.svg';
-import discussion from './discussion.svg';
-import computer from './computer.svg';
-import computer_white from './computer_white.svg';
-import background from './Back-image.jpg';
+import first from './images/first.svg';
+import device from './images/devices.svg';
+import discussion from './images/discussion.svg';
+import computer from './images/computer.svg';
+import computer_white from './images/computer_white.svg';
+import background from './images/Back-image.jpg';
 import './App.css';
 //import fetch from 'fetch';
 import Header from './components/Header';
@@ -19,11 +19,6 @@ var topStyle={
 };
 
 class App extends Component {
-  // getData(){
-  //    fetch.get('/salary/test').then((res)=>{
-  //       console.log(res);
-  //    });
-  // }
 
   constructor(props){
     super(props);

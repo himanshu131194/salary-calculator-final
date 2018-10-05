@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import facebook from '../facebook-logo.png';
-import google from '../google-plus.png';
-import linkedin from '../linkedin-logo.png';
-import twitter from '../twitter-logo.png';
-import youtube from '../youtube-logo.png';
-import googleplay from '../GooglePlay.png';
+import facebook from '../images/facebook-logo.png';
+import google from '../images/google-plus.png';
+import linkedin from '../images/linkedin-logo.png';
+import twitter from '../images/twitter-logo.png';
+import youtube from '../images/youtube-logo.png';
+import googleplay from '../images/GooglePlay.png';
 import './Footer.css';
 
 class Footer extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import teamlease from '../TeamLease-white.png';
-import user from '../user_white.png';
+import teamlease from '../images/TeamLease-white.png';
+import user from '../images/user_white.png';
 import './Header.css';
 
 class Header extends Component {
