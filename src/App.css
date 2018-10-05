@@ -8,9 +8,8 @@
 }
 
 .top_content{
-  /* background-color: #305986; */
-  background-color: #626aa0;
   color:white;
+  padding-top:1rem;
 }
 
 .custom_form{
@@ -41,25 +40,48 @@
 .form-control{
   border-radius: 15px;
   margin-bottom: 5rem;
+  font-size: 14px;
 }
 
 .submit{
-  background-color: #218bfd;
+  background-color: #1266da;
   color:white;
-  border-color: #218bfd;
+  border-color: #1266da;
+  box-shadow: -1px 1px 8px 1px #262654;
 }
 
-.result_box{
+.submit:hover, .submit:focus, .submit:active{
+  background-color: #1563d0;
+  border-color: #1563d0;
+  color:white;
+  box-shadow:none;
+}
+
+.defaultResultBox{
   width: 50%;
-  height: 150px;
+  min-height: 150px;
   background-color: white;
   box-shadow: 2px 1px 10px 1px lightgrey;
   position: absolute;
   left: 25%;
   margin-top: -14%;
   color: #7A7D80;
-  padding: 25px;
+  padding: 15px 30px;
   font-size:12px;
+  max-height:250px;
+}
+
+.newResultBox{
+  background-image: linear-gradient(#77abff, #5ddecb);
+  color:white;
+  width: 50%;
+  min-height: 120px;
+  /* box-shadow: 2px 1px 10px 1px #77abff; */
+  position: absolute;
+  left: 25%;
+  margin-top: -14%;
+  padding: 15px 40px 5px;
+  max-height:250px;
 }
 
 .result_title{
@@ -67,18 +89,42 @@
   font-weight:bold;
 }
 
+.newResult_title{
+  font-size:20px;
+}
+
 .result_content{
   display:flex;
   justify-content: space-around;
-  padding: 10px 40px;
+  padding: 10px 40px 0 40px;
+}
+
+.newResult_content{
+  display:flex;
+  justify-content: flex-start;
 }
 
 .result_img{
   height:75px;
 }
 
+.newResult_img{
+  height:70px;
+  margin-top:2%;
+}
+
 .result_text{
   margin-top:4%;
+}
+
+.right_content{
+  margin-left:15%;
+}
+
+.newResult_text{
+  margin-top:6%;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .bottom_content{
@@ -93,8 +139,9 @@
 }
 
 .box_title{
-  font-size: 18px;
-  margin-top:14%;
+  font-size: 16px;
+  margin-top:11%;
+  color: #333333;
 }
 
 .box_img{
@@ -103,9 +150,20 @@
 }
 
 .box_head{
-  display:inline-flex;
+  display:flex;
+  justify-content: flex-start;
+  padding:0 11px;
 }
 
 .box_text{
-  padding:10px 0;
+  padding:12px 0;
+  color: #666666;
+}
+
+select.location, select.experience{
+  min-width: 173px;
+}
+
+select.designation{
+  min-width:315px;
 }
