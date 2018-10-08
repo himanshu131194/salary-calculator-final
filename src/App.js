@@ -7,7 +7,7 @@ import computer from './images/computer.svg';
 import computer_white from './images/computer_white.svg';
 import background from './images/Back-image.jpg';
 import './App.css';
-//import fetch from 'fetch';
+import './search-filter.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -25,11 +25,84 @@ class App extends Component {
     this.state={ salRange:null, cities: null, designations: null }
     if(!this.state.cities){
         axios.get('/site/reactsalarycalculator')
-             .then(result=>{ this.setState({ cities: result.data['cities'], designations: result.data['designations'] } )})
+             .then(result=>{
+                   this.setState({ cities: result.data['cities'], designations: result.data['designations'] } )
+                   let ele = document.getElementById('designation'),
+                       designations = this.state.designations;
+                   this.autocompleteInput(ele, designations)
+              })
+    }
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
+
+  autocompleteInput(inp, arr) {
+    var currentFocus;
+
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+          if (arr[i]['designation_name'].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            b = document.createElement("DIV");
+            b.innerHTML = "<strong>" + arr[i]['designation_name'].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i]['designation_name'].substr(val.length);
+            b.innerHTML += "<input type='hidden' value='" + arr[i]['designation_name'] + "'>";
+                b.addEventListener("click", function(e) {
+                inp.value = this.getElementsByTagName("input")[0].value;
+                closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+    });
+
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          currentFocus++;
+          addActive(x);
+        } else if (e.keyCode == 38) {
+          currentFocus--;
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          e.preventDefault();
+          if (currentFocus > -1)
+            if (x) x[currentFocus].click();
+        }
+    });
+
+    function addActive(x) {
+        if (!x) return false;
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        x[currentFocus].classList.add("autocomplete-active");
     }
 
-    this.onFormSubmit = this.onFormSubmit.bind(this);
-    //this.getData = this.getData.bind(this);
+    function removeActive(x){
+        for (var i = 0; i < x.length; i++)
+        x[i].classList.remove("autocomplete-active");
+    }
+
+    function closeAllLists(elmnt) {
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp)
+           x[i].parentNode.removeChild(x[i]);
+        }
+    }
+
+    document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+    });
+
   }
 
   defaultSalaryRangeBox(){
@@ -64,8 +137,6 @@ class App extends Component {
     let loc = e.target.getElementsByClassName('location')[0].value;
     let desig = e.target.getElementsByClassName('designation')[0].value;
     let exp = e.target.getElementsByClassName('experience')[0].value;
-    //let sal = loc+"/"+desig+"/"+exp;
-
     const formData = new FormData();
           formData.append('city_name', loc);
           formData.append('designation_name', desig);
@@ -75,7 +146,6 @@ class App extends Component {
            var range= "Rs "+result.data.min_salary+" - Rs "+result.data.max_salary;
            this.setState({ salRange : range });
          })
-
   }
 
    updateSalaryRange(){
@@ -128,10 +198,9 @@ class App extends Component {
               <form className="" onSubmit={this.onFormSubmit}>
                 <div className="custom_form">
                 <div className="form-group">
-                    <select className="form-control designation" name="designation"  >
-                      <option value="">Select Designation</option>
-                      {this.getDesignation()}
-                    </select>
+                    <div className="autocomplete">
+                       <input className="form-control designation" name="designation" id="designation" placeholder="Designation" autoComplete="off"/>
+                    </div>
                 </div>
                 <div className="form-group">
                     <select className="form-control location" name="location" >
