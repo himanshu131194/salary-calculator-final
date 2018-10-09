@@ -28,7 +28,7 @@ class App extends Component {
              .then(result=>{
                    this.setState({ cities: result.data['cities'], designations: result.data['designations'] } )
                    let ele = document.getElementById('designation'),
-                       designations = this.state.designations;
+                   designations = this.state.designations;
                    this.autocompleteInput(ele, designations)
               })
     }
@@ -37,7 +37,6 @@ class App extends Component {
 
   autocompleteInput(inp, arr) {
     var currentFocus;
-
     inp.addEventListener("input", function(e) {
         var a, b, i, val = this.value;
         closeAllLists();
@@ -95,7 +94,6 @@ class App extends Component {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
         if (elmnt !== x[i] && elmnt !== inp){
-          console.log(x[i]);
            x[i].parentNode.removeChild(x[i]);
            // if(!x[i])
            //    document.getElementsByClassName("autocomplete-items").style.borderBottom="none";
@@ -147,8 +145,8 @@ class App extends Component {
           formData.append('work_experience', exp);
     axios.post('/site/reactsalarycalculator', formData)
          .then(result=>{
-           var range= "Rs "+result.data.min_salary+" - Rs "+result.data.max_salary;
-           this.setState({ salRange : range });
+             let range = result.data['data'] ?  "Rs "+result.data['data'].min_salary+" - Rs "+result.data['data'].max_salary: result.data['error'];
+             this.setState({ salRange : range });
          })
   }
 
