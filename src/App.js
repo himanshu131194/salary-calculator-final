@@ -48,7 +48,7 @@ class App extends Component {
         a.setAttribute("class", "autocomplete-items");
         this.parentNode.appendChild(a);
         for (i = 0; i < arr.length; i++) {
-          if (arr[i]['designation_name'].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          if (arr[i]['designation_name'].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
             b = document.createElement("DIV");
             b.innerHTML = "<strong>" + arr[i]['designation_name'].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i]['designation_name'].substr(val.length);
@@ -65,13 +65,13 @@ class App extends Component {
     inp.addEventListener("keydown", function(e) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
-        if (e.keyCode == 40) {
+        if (e.keyCode === 40) {
           currentFocus++;
           addActive(x);
-        } else if (e.keyCode == 38) {
+        } else if (e.keyCode === 38) {
           currentFocus--;
           addActive(x);
-        } else if (e.keyCode == 13) {
+        } else if (e.keyCode === 13) {
           e.preventDefault();
           if (currentFocus > -1)
             if (x) x[currentFocus].click();
@@ -94,8 +94,12 @@ class App extends Component {
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != inp)
+        if (elmnt !== x[i] && elmnt !== inp){
+          console.log(x[i]);
            x[i].parentNode.removeChild(x[i]);
+           // if(!x[i])
+           //    document.getElementsByClassName("autocomplete-items").style.borderBottom="none";
+         }
         }
     }
 
