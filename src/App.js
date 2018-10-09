@@ -26,13 +26,14 @@ class App extends Component {
     if(!this.state.cities){
         axios.get('/site/reactsalarycalculator')
              .then(result=>{
-                   this.setState({ cities: result.data['cities'], designations: result.data['designations'] } )
+                   this.setState({ cities: result.data['cities'], designations: result.data['designations'] } );
                    let ele = document.getElementById('designation'),
                    designations = this.state.designations;
                    this.autocompleteInput(ele, designations)
               })
     }
     this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.validateFieldsValue = this.validateFieldsValue.bind(this);
   }
 
   autocompleteInput(inp, arr) {
@@ -47,11 +48,11 @@ class App extends Component {
         a.setAttribute("class", "autocomplete-items");
         this.parentNode.appendChild(a);
         for (i = 0; i < arr.length; i++) {
-          if (arr[i]['designation_name'].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
+          if (arr[i].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
             b = document.createElement("DIV");
-            b.innerHTML = "<strong>" + arr[i]['designation_name'].substr(0, val.length) + "</strong>";
-            b.innerHTML += arr[i]['designation_name'].substr(val.length);
-            b.innerHTML += "<input type='hidden' value='" + arr[i]['designation_name'] + "'>";
+            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
                 b.addEventListener("click", function(e) {
                 inp.value = this.getElementsByTagName("input")[0].value;
                 closeAllLists();
@@ -95,8 +96,6 @@ class App extends Component {
         for (var i = 0; i < x.length; i++) {
         if (elmnt !== x[i] && elmnt !== inp){
            x[i].parentNode.removeChild(x[i]);
-           // if(!x[i])
-           //    document.getElementsByClassName("autocomplete-items").style.borderBottom="none";
          }
         }
     }
@@ -134,15 +133,43 @@ class App extends Component {
     )
   }
 
+  validateForm(element, flag){
+     if(flag==0){
+        element.style.border = "1px solid red";
+        element.parentNode.getElementsByClassName('valid-error')[0].classList.remove('display-none');
+        return false;
+     }else{
+       element.style.border = "1px solid #ced4da";
+       element.parentNode.getElementsByClassName('valid-error')[0].classList.add('display-none');
+     }
+  }
+
+
   onFormSubmit(e){
     e.preventDefault();
-    let loc = e.target.getElementsByClassName('location')[0].value;
-    let desig = e.target.getElementsByClassName('designation')[0].value;
-    let exp = e.target.getElementsByClassName('experience')[0].value;
+    let loc = e.target.getElementsByClassName('location')[0];
+    let desig = e.target.getElementsByClassName('designation')[0];
+    let exp = e.target.getElementsByClassName('experience')[0];
+
+    if(desig.value=='')
+       return this.validateForm(desig, 0)
+    else
+       this.validateForm(desig, 1)
+
+    if(loc.value=='')
+       return this.validateForm(loc, 0)
+    else
+       this.validateForm(loc, 1)
+
+    if(exp.value=='')
+       return this.validateForm(exp, 0)
+    else
+       this.validateForm(exp, 1)
+
     const formData = new FormData();
-          formData.append('city_name', loc);
-          formData.append('designation_name', desig);
-          formData.append('work_experience', exp);
+          formData.append('city_name', loc.value);
+          formData.append('designation_name', desig.value);
+          formData.append('work_experience', exp.value);
     axios.post('/site/reactsalarycalculator', formData)
          .then(result=>{
              let range = result.data['data'] ?  "Rs "+result.data['data'].min_salary+" - Rs "+result.data['data'].max_salary: result.data['error'];
@@ -163,9 +190,12 @@ class App extends Component {
      let cities = null;
      if(this.state.cities){
         cities = this.state.cities.map((res)=>{
-              return (
-                <option key={res.id} value={res.id}>{res.city}</option>
-              )
+             let ignoreArr = [49, 152, 30];
+             if(ignoreArr.indexOf(res.id) == -1){
+               return (
+                <option key={res.id} value={res.city}>{res.city}</option>
+               )
+             }
          })
      }
      return cities;
@@ -176,11 +206,18 @@ class App extends Component {
     if(this.state.designations){
        desig = this.state.designations.map((res)=>{
              return (
-               <option key={res.id} value={res.id}>{res.designation_name}</option>
+               <option key={res.id} value={res.designation_name}>{res.designation_name}</option>
              )
         })
     }
     return desig;
+  }
+
+  validateFieldsValue(e){
+      if(e.target.value=='')
+         return this.validateForm(e.target, 0)
+      else
+         this.validateForm(e.target, 1)
   }
 
   render() {
@@ -201,23 +238,26 @@ class App extends Component {
                 <div className="custom_form">
                 <div className="form-group">
                     <div className="autocomplete">
-                       <input className="form-control designation" name="designation" id="designation" placeholder="Designation" autoComplete="off"/>
+                       <input className="form-control designation" name="designation" id="designation" placeholder="Designation" autoComplete="off" onKeyUp={this.validateFieldsValue}/>
+                       <div className="valid-error display-none">Please select the designation</div>
                     </div>
                 </div>
                 <div className="form-group">
-                    <select className="form-control location" name="location" >
+                    <select className="form-control location" name="location" onChange={this.validateFieldsValue}>
                       <option value="">Select Location</option>
                       {this.getCities()}
                     </select>
+                    <div className="valid-error display-none">Please select the location</div>
                 </div>
                 <div className="form-group">
-                   <select name="experience" className="form-control experience" placeholder="Experience"  >
+                   <select name="experience" className="form-control experience" placeholder="Experience"  onChange={this.validateFieldsValue}>
                       <option value="" default>Experience in Years</option>
-                      <option value="1">0-3</option>
-                      <option value="2">3-6</option>
-                      <option value="3">6-10</option>
-                      <option value="4">10+</option>
+                      <option value="3">0-3 Years</option>
+                      <option value="6">3-6 Years</option>
+                      <option value="10">6-10 Years</option>
+                      <option value="11">10+ Years</option>
                     </select>
+                    <div className="valid-error display-none">Please select the work experience</div>
               </div>
               <div className="form-group">
                   <button className="submit form-control" name="submit">Estimate Salary</button>

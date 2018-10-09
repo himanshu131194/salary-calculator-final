@@ -59,6 +59,7 @@
   border-color: #1563d0;
   color:white;
   box-shadow:none;
+  cursor: pointer;
 }
 
 .defaultResultBox{
@@ -170,4 +171,12 @@ select.location, select.experience{
 
 input.designation{
   min-width:200px;
+}
+.valid-error{
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+.display-none{
+   display: none;
 }
