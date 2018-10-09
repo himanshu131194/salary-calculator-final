@@ -8,6 +8,7 @@ import computer_white from './images/computer_white.svg';
 import background from './images/Back-image.jpg';
 import './App.css';
 import './search-filter.css';
+import Config from './config';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -24,7 +25,7 @@ class App extends Component {
     super(props);
     this.state={ salRange:null, cities: null, designations: null }
     if(!this.state.cities){
-        axios.get('/site/reactsalarycalculator')
+        axios.get(`${Config.ROOT_URL}/site/reactsalarycalculator`)
              .then(result=>{
                    this.setState({ cities: result.data['cities'], designations: result.data['designations'] } );
                    let ele = document.getElementById('designation'),
@@ -170,7 +171,7 @@ class App extends Component {
           formData.append('city_name', loc.value);
           formData.append('designation_name', desig.value);
           formData.append('work_experience', exp.value);
-    axios.post('/site/reactsalarycalculator', formData)
+    axios.post(`${Config.ROOT_URL}/site/reactsalarycalculator`, formData)
          .then(result=>{
              let range = result.data['data'] ?  "Rs "+result.data['data'].min_salary+" - Rs "+result.data['data'].max_salary: result.data['error'];
              this.setState({ salRange : range });
@@ -239,7 +240,7 @@ class App extends Component {
                 <div className="form-group">
                     <div className="autocomplete">
                        <input className="form-control designation" name="designation" id="designation" placeholder="Designation" autoComplete="off" onKeyUp={this.validateFieldsValue}/>
-                       <div className="valid-error display-none">Please select the designation</div>
+                       <div className="valid-error display-none">Please enter designation</div>
                     </div>
                 </div>
                 <div className="form-group">
@@ -247,7 +248,7 @@ class App extends Component {
                       <option value="">Select Location</option>
                       {this.getCities()}
                     </select>
-                    <div className="valid-error display-none">Please select the location</div>
+                    <div className="valid-error display-none">Please select location</div>
                 </div>
                 <div className="form-group">
                    <select name="experience" className="form-control experience" placeholder="Experience"  onChange={this.validateFieldsValue}>
@@ -257,7 +258,7 @@ class App extends Component {
                       <option value="10">6-10 Years</option>
                       <option value="11">10+ Years</option>
                     </select>
-                    <div className="valid-error display-none">Please select the work experience</div>
+                    <div className="valid-error display-none">Please select experience</div>
               </div>
               <div className="form-group">
                   <button className="submit form-control" name="submit">Estimate Salary</button>
