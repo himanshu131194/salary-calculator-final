@@ -13,7 +13,6 @@
 }
 
 .custom_form{
-  margin-bottom:8rem;
   font-size: large;
   display:flex;
   justify-content: space-around;
@@ -43,7 +42,6 @@
 
 .form-control{
   border-radius: 15px;
-  /* margin-bottom: 5rem; */
   font-size: 14px;
 }
 
@@ -52,6 +50,8 @@
   color:white;
   border-color: #1266da;
   box-shadow: -1px 1px 8px 1px #262654;
+  width: 175px;
+  font-size: 16px;
 }
 
 .submit:hover, .submit:focus, .submit:active{
@@ -66,10 +66,10 @@
   width: 50%;
   min-height: 150px;
   background-color: white;
-  box-shadow: 2px 1px 10px 1px lightgrey;
+  box-shadow: 1px 0px 8px 0px lightgrey;
   position: absolute;
   left: 25%;
-  margin-top: -14%;
+  margin-top: -4%;
   color: #7A7D80;
   padding: 15px 30px;
   font-size:12px;
@@ -81,10 +81,9 @@
   color:white;
   width: 50%;
   min-height: 130px;
-  /* box-shadow: 2px 1px 10px 1px #77abff; */
   position: absolute;
   left: 25%;
-  margin-top: -14%;
+  margin-top: -4%;
   padding: 15px 40px 10px;
   max-height:250px;
 }
@@ -115,7 +114,7 @@
 
 .newResult_img{
   height:70px;
-  margin-top:2%;
+  margin-top:3%;
 }
 
 .result_text{
@@ -133,9 +132,20 @@
 }
 
 .bottom_content{
+  background: linear-gradient(125deg, #FFFFFF 37%, transparent 15%),
+    linear-gradient(160deg, #FFFFFF 0%, transparent 0%),
+    linear-gradient(305deg, #FFFFFF 34%, transparent 15%),
+    linear-gradient(75deg, #FFFFFF 0%, transparent 0%);
+  background-size: 100%;
+  background-color: #F5F6F8;
+  display:inline-block;
+}
+
+.box_div{
   display:flex;
   justify-content: space-around;
   margin-bottom: 2rem;
+  margin-top:8rem;
 }
 
 .content_box{
@@ -157,20 +167,20 @@
 .box_head{
   display:flex;
   justify-content: flex-start;
-  padding:0 11px;
 }
 
 .box_text{
   padding:12px 0;
   color: #666666;
+  text-align: left;
 }
 
 select.location, select.experience{
-  min-width: 173px;
+  min-width: 260px;
 }
 
 input.designation{
-  min-width:200px;
+  min-width:260px;
 }
 .valid-error{
   color: red;

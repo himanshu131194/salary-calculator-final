@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import first from './images/first.svg';
-import device from './images/devices.svg';
-import discussion from './images/discussion.svg';
-import computer from './images/computer.svg';
-import computer_white from './images/computer_white.svg';
+import skill from './images/skill_market_value.svg';
+import salary from './images/Discuss_salary.svg';
+import career from './images/Decide_your_Career.svg';
+import computer from './images/salary_display.svg';
+import computer_white from './images/salary_display_white.svg';
 import background from './images/Back-image.jpg';
 import './App.css';
 import './search-filter.css';
@@ -35,6 +35,8 @@ class App extends Component {
     }
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.validateFieldsValue = this.validateFieldsValue.bind(this);
+    var number = 3500000;
+    console.log(number.toLocaleString());
   }
 
   autocompleteInput(inp, arr) {
@@ -110,10 +112,10 @@ class App extends Component {
   defaultSalaryRangeBox(){
     return (
        <div className="defaultResultBox">
-         <div className="result_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusm</div>
+         <div className="result_title">Take next step of your career and elevate earning Potential</div>
          <div className="result_content">
            <img className="result_img" alt="graph" src={computer} />
-           <p className="result_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor</p>
+           <p className="result_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod</p>
          </div>
        </div>
     )
@@ -173,7 +175,7 @@ class App extends Component {
           formData.append('work_experience', exp.value);
     axios.post(`${Config.ROOT_URL}/site/reactsalarycalculator`, formData)
          .then(result=>{
-             let range = result.data['data'] ?  "Rs "+result.data['data'].min_salary+" - Rs "+result.data['data'].max_salary: result.data['error'];
+             let range = result.data['data'] ?  "Rs "+result.data['data'].min_salary.toLocaleString()+" - Rs "+result.data['data'].max_salary.toLocaleString(): result.data['error'];
              this.setState({ salRange : range });
          })
   }
@@ -227,13 +229,10 @@ class App extends Component {
         <Header/>
         <div className="Salary-content">
           <div className="top_content" style={ topStyle } >
-            <h2 className="App-title">How much are your skills worth?</h2>
-            <p className="first_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat</p>
-            <p className="second_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod</p>
+            <h2 className="App-title">How Much You Should be you Getting paid?</h2>
+            <p className="first_text">How Much does a "designation" make in "City"</p>
+            <p className="second_text">Try out our free salary calculator, Salary is based
+            on the city living standard, company policy and based on the market research data.</p>
             <div className="App-intro">
               <form className="" onSubmit={this.onFormSubmit}>
                 <div className="custom_form">
@@ -269,37 +268,33 @@ class App extends Component {
         </div>
         <div className="result_box">{this.updateSalaryRange()}</div>
         <div className="bottom_content">
-          <div className="content_box">
-            <div className="box_head">
-              <div className="box_title">Lorem Ipsum</div>
-              <img src={first} className="box_img" alt="first" />
+          <div className="box_div">
+            <div className="content_box">
+              <div className="box_head">
+                <div className="box_title">Your skill market value</div>
+                <img src={skill} className="box_img" alt="first" />
+              </div>
+              <div className="box_text">
+                Get the estimated salary based on experience and skills. Set the designation, location, and experience to get the expected salary range.
+              </div>
             </div>
-            <div className="box_text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud
+            <div className="content_box">
+              <div className="box_head">
+                <div className="box_title">Discuss salary based on data</div>
+                <img src={salary} className="box_img" alt="devices" />
+              </div>
+              <div className="box_text">
+                Your Salary range will help you to negotiate for the new job. Help you while salary review discussion.
+              </div>
             </div>
-          </div>
-          <div className="content_box">
-            <div className="box_head">
-              <div className="box_title">Lorem Ipsum</div>
-              <img src={device} className="box_img" alt="devices" />
-            </div>
-            <div className="box_text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud
-            </div>
-          </div>
-          <div className="content_box">
-            <div className="box_head">
-              <div className="box_title">Lorem Ipsum</div>
-              <img src={discussion} className="box_img" alt="discussion" />
-            </div>
-            <div className="box_text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud
+            <div className="content_box">
+              <div className="box_head">
+                <div className="box_title">Decide your Career and company</div>
+                <img src={career} className="box_img" alt="discussion" />
+              </div>
+              <div className="box_text">
+                Make your career decision more effective and elevate your earning potential based on salary estimation
+              </div>
             </div>
           </div>
         </div>
