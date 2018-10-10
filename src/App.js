@@ -180,15 +180,6 @@ class App extends Component {
          })
   }
 
-   updateSalaryRange(){
-       let range = this.state.salRange;
-       if(range){
-         return this.resultSalaryRangeBox();
-       }else{
-          return this.defaultSalaryRangeBox();
-       }
-  }
-
   getCities(){
      let cities = null;
      if(this.state.cities){
@@ -266,7 +257,7 @@ class App extends Component {
             </form>
           </div>
         </div>
-        <div className="result_box">{this.updateSalaryRange()}</div>
+        <div className="result_box">{this.state.salRange? this.resultSalaryRangeBox(): this.defaultSalaryRangeBox()}</div>
         <div className="bottom_content">
           <div className="box_div">
             <div className="content_box">
