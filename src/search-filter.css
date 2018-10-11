@@ -1,8 +1,7 @@
 .autocomplete {
   /*the container must be positioned relative:*/
-  /* width:300px; */
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   font-family: inherit;
   color: #495057;
   font-size: 14px;
