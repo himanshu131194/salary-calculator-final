@@ -136,6 +136,18 @@ class App extends Component {
     )
   }
 
+commaSeparate(num){
+    var x=num;
+    x=x.toString();
+    var lastThree = x.substring(x.length-3);
+    var otherNumbers = x.substring(0,x.length-3);
+    if(otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+    console.log(res);
+    return res;
+  }
+
   validateForm(element, flag){
      if(flag==0){
         element.style.border = "1px solid red";
@@ -175,9 +187,13 @@ class App extends Component {
           formData.append('work_experience', exp.value);
     axios.post(`${Config.ROOT_URL}/site/reactsalarycalculator`, formData)
          .then(result=>{
-             let range = result.data['data'] ?  "Rs "+result.data['data'].min_salary.toLocaleString()+" - Rs "+result.data['data'].max_salary.toLocaleString(): result.data['error'];
+             let range = result.data['data'] ?  "Rs "+this.commaSeparate(result.data['data'].min_salary)+" - Rs "+this.commaSeparate(result.data['data'].max_salary): result.data['error'];
              this.setState({ salRange : range });
          })
+
+      let sal_text = "How Much does a "+desig.value+" make in "+loc.value;
+      document.getElementsByClassName("sal_text")[0].innerHTML = sal_text;
+      console.log(sal_text);
   }
 
   getCities(){
@@ -221,7 +237,6 @@ class App extends Component {
         <div className="Salary-content">
           <div className="top_content" style={ topStyle } >
             <h2 className="App-title">How Much You Should be you Getting paid?</h2>
-            <p className="first_text">How Much does a "designation" make in "City"</p>
             <p className="second_text">Try out our free salary calculator, Salary is based
             on the city living standard, company policy and based on the market research data.</p>
             <div className="App-intro">
@@ -258,6 +273,7 @@ class App extends Component {
           </div>
         </div>
         <div className="result_box">{this.state.salRange? this.resultSalaryRangeBox(): this.defaultSalaryRangeBox()}</div>
+        <div className="sal_text"></div>
         <div className="bottom_content">
           <div className="box_div">
             <div className="content_box">

@@ -79,12 +79,12 @@ h2{
 }
 
 .second_text{
-  font-size:18px;
+  font-size:17px;
   margin-bottom: 2%;
 }
 
 .form-group {
-    margin-bottom: 8%;
+    margin-bottom: 10%;
     position:relative;
 }
 
@@ -189,7 +189,7 @@ h2{
 .box_div{
   display:flex;
   justify-content: space-around;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
   margin-top: 8.5%;
   flex-flow: row wrap;
   align-items: center;
@@ -240,6 +240,13 @@ input.designation{
 }
 .display-none{
    display: none;
+}
+
+.sal_text{
+  margin-top:-6.5%;
+  left:39%;
+  position: absolute;
+  color:white;
 }
 
 @media (max-width: 800px) {
