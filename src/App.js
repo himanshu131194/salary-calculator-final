@@ -35,8 +35,6 @@ class App extends Component {
     }
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.validateFieldsValue = this.validateFieldsValue.bind(this);
-    var number = 3500000;
-    console.log(number.toLocaleString());
   }
 
   autocompleteInput(inp, arr) {
@@ -136,16 +134,15 @@ class App extends Component {
     )
   }
 
-commaSeparate(num){
-    var x=num;
-    x=x.toString();
-    var lastThree = x.substring(x.length-3);
-    var otherNumbers = x.substring(0,x.length-3);
-    if(otherNumbers != '')
-        lastThree = ',' + lastThree;
-    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
-    console.log(res);
-    return res;
+  commaSeparate(num){
+      var x=num;
+      x=x.toString();
+      var lastThree = x.substring(x.length-3);
+      var otherNumbers = x.substring(0,x.length-3);
+      if(otherNumbers != '')
+          lastThree = ',' + lastThree;
+      var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+      return res;
   }
 
   validateForm(element, flag){
@@ -193,7 +190,6 @@ commaSeparate(num){
 
       let sal_text = "How Much does a "+desig.value+" make in "+loc.value;
       document.getElementsByClassName("sal_text")[0].innerHTML = sal_text;
-      console.log(sal_text);
   }
 
   getCities(){
