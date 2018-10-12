@@ -330,4 +330,8 @@ input.designation{
     .App {
       width:100%;
     }
+    .sal_text{
+      margin-top: -12.5%;
+      left: 27%;
+    }
 }
