@@ -2,6 +2,7 @@
 *, ::after, ::before {
  box-sizing: border-box;
 }
+
 body{
  font-size: 1rem;
  font-weight: 400;
@@ -18,7 +19,7 @@ body{
    padding: .375rem .75rem;
    line-height: 1.5;
    color: #495057;
-   border-radius: 15px;
+   border-radius: 21px;
    font-size: 14px;
    background-color: #fff;
    background-clip: padding-box;
@@ -61,7 +62,7 @@ h2{
   font-size: large;
   display:flex;
   justify-content: space-around;
-  padding: 0 8%;
+  padding: 0 11%;
   flex-flow: row wrap;
   align-items: center;
 }
@@ -108,8 +109,8 @@ h2{
   width: 50%;
   min-height: 135px;
   background-color: white;
-  -webkit-box-shadow: 1px 0px 8px 0px lightgrey;
-  box-shadow: 1px 0px 8px 0px lightgrey;
+  -webkit-box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.27);
+  box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.27);
   position: absolute;
   left: 25%;
   margin-top: -4%;
@@ -223,6 +224,16 @@ h2{
 
 select.location, select.experience{
   min-width: 260px;
+}
+
+select{
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  background-position: 234px 13px;
+  background-repeat: no-repeat;
+  background-size: 11px;
+  background-image: url(./images/down-arrow.png); /* The image used */
 }
 
 input.designation{
