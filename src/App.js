@@ -113,7 +113,7 @@ class App extends Component {
          <div className="result_title">Take next step of your career and elevate earning Potential</div>
          <div className="result_content">
            <img className="result_img" alt="graph" src={computer} />
-           <p className="result_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod</p>
+           <p className="result_text">Get a free, personalized salary estimate based on today's job market</p>
          </div>
        </div>
     )
