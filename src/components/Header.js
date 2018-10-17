@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import teamlease from '../images/TeamLease-white.png';
-//import user from '../images/user_white.png';
 import './Header.css';
 
 class Header extends Component {

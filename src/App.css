@@ -84,7 +84,7 @@ h2{
 }
 
 .form-group {
-    margin-bottom: 10%;
+    margin-bottom: 11%;
     position:relative;
 }
 
@@ -167,6 +167,12 @@ h2{
 
 .right_content{
   margin-left:15%;
+}
+
+.loader{
+  position: absolute;
+  left: 45%;
+  margin-top: -4%;
 }
 
 .newResult_text{

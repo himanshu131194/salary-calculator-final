@@ -4,14 +4,15 @@ import skill from './images/skill_market_value.svg';
 import salary from './images/Discuss_salary.svg';
 import career from './images/Decide_your_Career.svg';
 import computer from './images/salary_display.svg';
-import computer_white from './images/salary_display_white.svg';
 import background from './images/Back-image.jpg';
 import './App.css';
 import './search-filter.css';
 import Config from './config';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import computer_white from './images/salary_display_white.svg';
 
+import loader from './images/Eclipse.gif';
 
 var topStyle={
   width: "100%",
@@ -23,7 +24,7 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.state={ salRange:null, cities: null, designations: null }
+    this.state={ salRange:null, cities: null, designations: null, loading: false }
     if(!this.state.cities){
         axios.get(`${Config.ROOT_URL}/site/reactsalarycalculator`)
              .then(result=>{
@@ -120,18 +121,21 @@ class App extends Component {
   }
 
   resultSalaryRangeBox(){
-    let range = this.state.salRange;
-    return (
-       <div className="newResultBox">
-         <div className="newResult_content">
-           <img className="newResult_img" alt="graph" src={computer_white} />
-           <div className="right_content">
-             <div className="newResult_title">Your Estimated Salary</div>
-             <p className="newResult_text">{range}</p>
-           </div>
-         </div>
-       </div>
-    )
+    if(!this.state.salRange && this.state.loading){
+       return <img src={loader} alt="loading" className="loader"/>
+    }else{
+      return (
+          <div className="newResultBox">
+            <div className="newResult_content">
+              <img className="newResult_img" alt="graph" src={computer_white} />
+              <div className="right_content">
+                <div className="newResult_title">Your Estimated Salary</div>
+                <p className="newResult_text">{this.state.salRange}</p>
+              </div>
+            </div>
+          </div>
+      )
+    }
   }
 
   commaSeparate(num){
@@ -177,6 +181,10 @@ class App extends Component {
        return this.validateForm(exp, 0)
     else
        this.validateForm(exp, 1)
+
+    //SET LOADING ICON
+    this.setState({loading: true});
+    this.setState({salRange:null});
 
     const formData = new FormData();
           formData.append('city_name', loc.value);
@@ -268,7 +276,7 @@ class App extends Component {
             </form>
           </div>
         </div>
-        <div className="result_box">{this.state.salRange? this.resultSalaryRangeBox(): this.defaultSalaryRangeBox()}</div>
+        <div className="result_box">{this.state.loading  ? this.resultSalaryRangeBox()  : this.defaultSalaryRangeBox() } </div>
         <div className="sal_text"></div>
         <div className="bottom_content">
           <div className="box_div">
