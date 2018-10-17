@@ -236,7 +236,7 @@ select{
   -moz-appearance:none; /* Firefox */
   -webkit-appearance:none; /* Safari and Chrome */
   appearance:none;
-  background-position: 234px 13px;
+  background-position: 94% 49%;
   background-repeat: no-repeat;
   background-size: 11px;
   background-image: url(./images/down-arrow.png); /* The image used */
