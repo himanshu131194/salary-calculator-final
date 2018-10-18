@@ -20,11 +20,16 @@ var topStyle={
   backgroundImage: `url(${background})`
 };
 
+
+
+
+
 class App extends Component {
 
   constructor(props){
+    //console.log(img_load);
     super(props);
-    this.state={ salRange:null, cities: null, designations: null, loading: false }
+    this.state={ salRange:null, cities: null, designations: null, loading: false, loadImg: false, loadImg2: false}
     if(!this.state.cities){
         axios.get(`${Config.ROOT_URL}/site/reactsalarycalculator`)
              .then(result=>{
@@ -36,6 +41,20 @@ class App extends Component {
     }
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.validateFieldsValue = this.validateFieldsValue.bind(this);
+
+    var x = this;
+    var objImg = new Image();
+    objImg.src = `${loader}`;
+    objImg.onload = function() {
+        x.setState({loadImg: true});
+    }
+
+    var objImg2 = new Image();
+    objImg2.src = `${computer_white}`;
+    objImg2.onload = function() {
+        x.setState({loadImg2: true});
+    }
+
   }
 
   autocompleteInput(inp, arr) {
@@ -120,9 +139,14 @@ class App extends Component {
     )
   }
 
+  onImageCompleteLoad(e){
+        console.log(e.target);
+
+  }
+
   resultSalaryRangeBox(){
-    if(!this.state.salRange && this.state.loading){
-       return <img src={loader} alt="loading" className="loader"/>
+    if(((!this.state.salRange || !this.state.loadImg2) || (!this.state.salRange && !this.state.loadImg2)) && this.state.loading){
+       return <img className="loader" src={loader} alt="loading" />;
     }else{
       return (
           <div className="newResultBox">
@@ -276,7 +300,7 @@ class App extends Component {
             </form>
           </div>
         </div>
-        <div className="result_box">{this.state.loading  ? this.resultSalaryRangeBox()  : this.defaultSalaryRangeBox() } </div>
+        <div className="result_box">{this.state.loading && this.state.loadImg ? this.resultSalaryRangeBox()  : this.defaultSalaryRangeBox() } </div>
         <div className="sal_text"></div>
         <div className="bottom_content">
           <div className="box_div">
