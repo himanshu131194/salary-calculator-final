@@ -29,14 +29,14 @@ class App extends Component {
   constructor(props){
     //console.log(img_load);
     super(props);
-    this.state={ salRange:null, cities: null, designations: null, loading: false, loadImg: false, loadImg2: false}
+    this.state={ salRange:null, cities: null, designations: null, loading: false, loadImg: false, loadImg2: false, checkValidDesignation: false}
     if(!this.state.cities){
         axios.get(`${Config.ROOT_URL}/site/reactsalarycalculator`)
              .then(result=>{
                    this.setState({ cities: result.data['cities'], designations: result.data['designations'] } );
                    let ele = document.getElementById('designation'),
                    designations = this.state.designations;
-                   this.autocompleteInput(ele, designations)
+                   this.autocompleteInput(ele, designations, this)
               })
     }
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -57,7 +57,7 @@ class App extends Component {
 
   }
 
-  autocompleteInput(inp, arr) {
+  autocompleteInput(inp, arr, parentthis) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
         var a, b, i, val = this.value;
@@ -68,8 +68,12 @@ class App extends Component {
         a.setAttribute("id", this.id + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         this.parentNode.appendChild(a);
+
         for (i = 0; i < arr.length; i++) {
           if (arr[i].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
+            parentthis.setState({
+               checkValidDesignation : false
+             })
             b = document.createElement("DIV");
             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);
@@ -117,6 +121,9 @@ class App extends Component {
         for (var i = 0; i < x.length; i++) {
         if (elmnt !== x[i] && elmnt !== inp){
            x[i].parentNode.removeChild(x[i]);
+           parentthis.setState({
+              checkValidDesignation : true
+           })
          }
         }
     }
@@ -137,11 +144,6 @@ class App extends Component {
          </div>
        </div>
     )
-  }
-
-  onImageCompleteLoad(e){
-        console.log(e.target);
-
   }
 
   resultSalaryRangeBox(){
@@ -177,10 +179,25 @@ class App extends Component {
      if(flag==0){
         element.style.border = "1px solid red";
         element.parentNode.getElementsByClassName('valid-error')[0].classList.remove('display-none');
+        if(element.parentNode.getElementsByClassName('valid-error2')[0]){
+          element.parentNode.getElementsByClassName('valid-error2')[0].classList.add('display-none');
+        }
         return false;
-     }else{
+     }
+     else if(flag==2){
+       if(element.parentNode.getElementsByClassName('valid-error2')[0]){
+         element.style.border = "1px solid red";
+         element.parentNode.getElementsByClassName('valid-error2')[0].classList.remove('display-none');
+         element.parentNode.getElementsByClassName('valid-error')[0].classList.add('display-none');
+         return false;
+       }
+     }
+     else{
        element.style.border = "1px solid #ced4da";
        element.parentNode.getElementsByClassName('valid-error')[0].classList.add('display-none');
+       if(element.parentNode.getElementsByClassName('valid-error2')[0]){
+         element.parentNode.getElementsByClassName('valid-error2')[0].classList.add('display-none');
+       }
      }
   }
 
@@ -190,9 +207,12 @@ class App extends Component {
     let loc = e.target.getElementsByClassName('location')[0];
     let desig = e.target.getElementsByClassName('designation')[0];
     let exp = e.target.getElementsByClassName('experience')[0];
+    let x = desig.value;
 
     if(desig.value=='')
        return this.validateForm(desig, 0)
+    else if(this.state.designations.indexOf(x) == -1)
+       return this.validateForm(desig, 2)
     else
        this.validateForm(desig, 1)
 
@@ -252,8 +272,10 @@ class App extends Component {
   }
 
   validateFieldsValue(e){
-      if(e.target.value=='')
+      if(e.target.value==''  )
          return this.validateForm(e.target, 0)
+      else if(this.state.checkValidDesignation)
+         return this.validateForm(e.target, 2)
       else
          this.validateForm(e.target, 1)
   }
@@ -274,6 +296,7 @@ class App extends Component {
                     <div className="autocomplete">
                        <input className="form-control designation" name="designation" id="designation" placeholder="Designation" autoComplete="off" onKeyUp={this.validateFieldsValue}/>
                        <div className="valid-error display-none">Please enter designation</div>
+                       <div className="valid-error2 display-none">No match found</div>
                     </div>
                 </div>
                 <div className="form-group">

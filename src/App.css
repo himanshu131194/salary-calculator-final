@@ -245,7 +245,7 @@ select{
 input.designation{
   min-width:260px;
 }
-.valid-error{
+.valid-error, .valid-error2{
   color: red;
   font-size: 14px;
   text-align: center;
