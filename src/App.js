@@ -208,18 +208,21 @@ class App extends Component {
     let desig = e.target.getElementsByClassName('designation')[0];
     let exp = e.target.getElementsByClassName('experience')[0];
     let x = desig.value;
-
+    let flag = true;
+    this.state.designations.map((result)=>{
+       if(result.toLowerCase()===x.toLowerCase()) flag=false;
+    })
     if(desig.value=='')
-       return this.validateForm(desig, 0)
-    else if(this.state.designations.indexOf(x) == -1)
-       return this.validateForm(desig, 2)
+        return this.validateForm(desig, 0)
+    else if(flag)
+        return this.validateForm(desig, 2)
     else
-       this.validateForm(desig, 1)
+        this.validateForm(desig, 1)
 
     if(loc.value=='')
-       return this.validateForm(loc, 0)
+        return this.validateForm(loc, 0)
     else
-       this.validateForm(loc, 1)
+        this.validateForm(loc, 1)
 
     if(exp.value=='')
        return this.validateForm(exp, 0)
@@ -274,7 +277,7 @@ class App extends Component {
   validateFieldsValue(e){
       if(e.target.value==''  )
          return this.validateForm(e.target, 0)
-      else if(this.state.checkValidDesignation)
+      else if(this.state.checkValidDesignation && e.target.type=="text")
          return this.validateForm(e.target, 2)
       else
          this.validateForm(e.target, 1)
