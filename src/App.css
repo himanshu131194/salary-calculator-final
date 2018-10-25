@@ -282,6 +282,7 @@ input.designation{
     }
     .submit{
       margin-bottom:10%;
+      width:100%;
     }
     .box_div {
       flex-direction: column;
