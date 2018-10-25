@@ -371,4 +371,8 @@ input.designation{
     .right_content {
       margin-left: 20%;
     }
+    .bottom_content{
+      background: linear-gradient(to bottom, #FFFFFF, #FFFFFF 44%, #F5F6F8 44%, #F5F6F8 69%, #FFFFFF 69%, #FFFFFF);
+      background-color: #FFFFFF;
+    }
 }
