@@ -129,7 +129,7 @@ class Footer extends Component {
 
         <div className="mob_alternate">
             <div className="nav-footer-corp margin_bottom_20">
-              <a href="https://tlconnect.teamlease.com/SecureLogin" class="text-decoration corp-text">
+              <a href="https://tlconnect.teamlease.com/SecureLogin" className="text-decoration corp-text">
                 Associate Login - Login Now
               </a>
             </div>
