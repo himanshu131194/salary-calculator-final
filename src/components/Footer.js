@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import facebook from '../images/facebook-logo.png';
-import google from '../images/google-plus.png';
-import linkedin from '../images/linkedin-logo.png';
-import twitter from '../images/twitter-logo.png';
-import youtube from '../images/youtube-logo.png';
+import facebook from '../images/Facebook.svg';
+import google from '../images/Googleplus.svg';
+import linkedin from '../images/LinkedIn.svg';
+import twitter from '../images/twitter.svg';
+import youtube from '../images/youtube.svg';
 import googleplay from '../images/GooglePlay.png';
 import appr from '../images/apprentices.jpg';
 import fw from '../images/freshersworld.jpg';
@@ -78,7 +78,7 @@ class Footer extends Component {
       						<div className="contact margin_top_10">Easy Job access on the go</div>
       						<div className="inline-block social-icon gplay">
       							<a href="" onClick={()=>{ window.open("https://play.google.com/store/apps/details?id=com.teamlease.jobs&amp;referrer=utm_source%3Dfooter%26utm_medium%3Dweb%26utm_campaign%3Dweb", '_blank'); }} data-toggle="toggle" title="Try our App on Google Play Store">
-      								<img src={googleplay} className="social_img gplay" alt="twitter" />
+      								<img src={googleplay} className="gplay" alt="twitter" />
       							</a>
       						</div>
 			         </div>
