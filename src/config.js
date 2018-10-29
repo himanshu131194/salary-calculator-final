@@ -1,3 +1,3 @@
 export default {
-    ROOT_URL : "https://www.teamleasejobs.com"
+    ROOT_URL : "https://www.teamlease.com"
 }
