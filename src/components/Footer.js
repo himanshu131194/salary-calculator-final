@@ -19,22 +19,22 @@ class Footer extends Component {
 				    <div className="center-align">
   						<div className="inline-block padding_top_15 padding_bottom_15">
   							<div className="fotter-bottom-links">
-  								<div className="contact margin_bottom_12">Corporate Website<a className="footer-hover associate_login float-right" href="https://tlconnect.teamlease.com/SecureLogin">Associate Login</a> </div>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com">TeamLeaseGroup.com</a>
+  								<div className="contact margin_bottom_12">Corporate Website<a className="footer-hover associate_login float-right" href="" onClick={(e)=>{ window.open("https://tlconnect.teamlease.com/SecureLogin", '_blank'); }}>Associate Login</a> </div>
+  								<a className="footer-hover color-777576 " href="" onClick={(e)=>{ window.open("https://www.teamleasegroup.com", '_blank'); }}>TeamLeaseGroup.com</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/about-teamlease">About Us</a>
+  								<a className="footer-hover color-777576 " href=""  onClick={()=>{ window.open("https://www.teamleasegroup.com/about-teamlease/", '_blank'); }}>About Us</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/temporary-staffing">Services</a>
+  								<a className="footer-hover color-777576 " href=""  onClick={()=>{ window.open("https://www.teamleasegroup.com/temporary-staffing", '_blank'); }}>Services</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/resources/reports/18">Resources</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/reports/18", '_blank'); }}>Resources</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/node/983">Media</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/node/983", '_blank'); }}>Media</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/overview">Investors</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/overview", '_blank'); }}>Investors</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/blogs">Blog</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/blogs", '_blank'); }}>Blog</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/current-openings">Work with Us</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/current-openings", '_blank'); }}>Work with Us</a>
   							</div>
   							<div className="fotter-bottom-links margin_top_30 width_340">
   								<div className="contact margin_bottom_12">Information</div>
@@ -42,42 +42,42 @@ class Footer extends Component {
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
   								<a className="footer-hover color-777576 " href="/business-enquiry?tlfootr">Business Enquiries</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="http://dev.teamleasejobs.com/faq">FAQ</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("http://www.teamleasejobs.com/faq", '_blank'); }}>FAQ</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/blogs">Blog</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/blogs", '_blank'); }}>Blog</a>
   							</div>
   						</div>
 
 					    <div className="inline-block social_icons follow_us_block">
 						      <div className="contact">Follow Us</div>
       						<div className="inline-block social-icon">
-      							<a href="https://www.linkedin.com/company/teamlease" data-toggle="toggle" alt="Get in Touch with TeamLease in LinkedIn" title="Get in Touch with TeamLease in LinkedIn">
+      							<a href="" onClick={()=>{ window.open("https://www.linkedin.com/company/teamlease", '_blank'); }} data-toggle="toggle" alt="Get in Touch with TeamLease in LinkedIn" title="Get in Touch with TeamLease in LinkedIn">
       								<img src={linkedin} className="social_img" alt="linkedin" />
       							</a>
       						</div>
       						<div className="inline-block social-icon">
-      							<a href="https://www.facebook.com/teamleaseservices/" data-toggle="toggle" alt="Get in Touch with TeamLease in Facebook" title="Get in Touch with TeamLease in Facebook">
+      							<a href="" onClick={()=>{ window.open("https://www.facebook.com/teamleaseservices/", '_blank'); }} data-toggle="toggle" alt="Get in Touch with TeamLease in Facebook" title="Get in Touch with TeamLease in Facebook">
       								<img src={facebook} className="social_img" alt="facebook" />
       							</a>
       						</div>
       						<div className="inline-block social-icon">
-      							<a href="https://www.youtube.com/teamlease" alt="Get in Touch with TeamLease in Youtube" data-toggle="toggle" title="Get in Touch with TeamLease in Youtube">
+      							<a href="" onClick={()=>{ window.open("https://www.youtube.com/teamlease", '_blank'); }} alt="Get in Touch with TeamLease in Youtube" data-toggle="toggle" title="Get in Touch with TeamLease in Youtube">
       							   <img src={youtube} className="social_img" alt="youtube" />
       							</a>
       						</div>
       						<div className="inline-block social-icon">
-      							<a href="https://plus.google.com/+teamlease" alt="Get in Touch with TeamLease in +Google" data-toggle="toggle" title="Get in Touch with TeamLease in +Google">
+      							<a href="" onClick={()=>{ window.open("https://plus.google.com/+teamlease", '_blank'); }} alt="Get in Touch with TeamLease in +Google" data-toggle="toggle" title="Get in Touch with TeamLease in +Google">
       								<img src={google} className="social_img" alt="google" />
       							</a>
       						</div>
       						<div className="inline-block social-icon">
-      							<a href="https://twitter.com/teamlease" alt="Get in Touch with TeamLease in Twitter" data-toggle="toggle" title="Get in Touch with TeamLease in Twitter">
+      							<a href="" onClick={()=>{ window.open("https://twitter.com/teamlease", '_blank'); }} alt="Get in Touch with TeamLease in Twitter" data-toggle="toggle" title="Get in Touch with TeamLease in Twitter">
       								<img src={twitter} className="social_img" alt="twitter" />
       							</a>
       						</div>
       						<div className="contact margin_top_10">Easy Job access on the go</div>
       						<div className="inline-block social-icon gplay">
-      							<a href="https://play.google.com/store/apps/details?id=com.teamlease.jobs&amp;referrer=utm_source%3Dfooter%26utm_medium%3Dweb%26utm_campaign%3Dweb" data-toggle="toggle" title="Try our App on Google Play Store">
+      							<a href="" onClick={()=>{ window.open("https://play.google.com/store/apps/details?id=com.teamlease.jobs&amp;referrer=utm_source%3Dfooter%26utm_medium%3Dweb%26utm_campaign%3Dweb", '_blank'); }} data-toggle="toggle" title="Try our App on Google Play Store">
       								<img src={googleplay} className="social_img gplay" alt="twitter" />
       							</a>
       						</div>
@@ -91,11 +91,11 @@ class Footer extends Component {
        							<div className="color-777576  margin-top-15">Copyright © 2018 TeamLease. All rights reserved</div>
        							<div className="color-777576 margin_top_8">ISO 27001 Information Technology Security Management System. Certified by British Standards</div>
        							<div className="font-12 fotter-bottom-links margin_bottom_0 margin_top_20">
-         								<a className="footer-hover color-777576" href="/terms-conditions" target="_blank">Terms &amp; Conditions</a>
+         								<a className="footer-hover color-777576" href="" onClick={()=>{ window.open("https://www.teamlease.com/terms-conditions", '_blank'); }} >Terms &amp; Conditions</a>
          								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-         								<a className="footer-hover color-777576 " href="/privacy-policy" target="_blank">Privacy Policy</a>
+         								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamlease.com/privacy-policy", '_blank'); }}>Privacy Policy</a>
          								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-         								<a className="footer-hover color-777576 " href="/sitemap" target="_blank">Sitemap</a>
+         								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamlease.com/sitemap", '_blank'); }}>Sitemap</a>
        							</div>
      						</div>
  						</div>
@@ -105,22 +105,22 @@ class Footer extends Component {
             <div className="center-align text-center margin_top_20 margin_bottom_20">
               <div className="inline-block color-777576 margin_right_20"><div className="site_text">Partner Sites</div></div>
               <div className="inline-block companies-logo-footer">
-                  <a href="https://www.freshersworld.com" target="_blank">
+                  <a href="" onClick={()=>{ window.open("https://www.freshersworld.com", '_blank'); }}>
                       <img alt="freshersworld.com" title="Freshersworld" src={fw} />
                   </a>
               </div>
               <div className="inline-block companies-logo-footer">
-                  <a href="http://www.teamleaseuniversity.ac.in" target="_blank">
+                  <a href="" onClick={()=>{ window.open("http://www.teamleaseuniversity.ac.in", '_blank'); }}>
                       <img alt="teamleaseuniversity.ac.in" title="Teamlease Skills" src={teamlease} />
                   </a>
               </div>
               <div className="inline-block companies-logo-footer">
-                  <a href="https://www.apprentices.in" target="_blank">
+                  <a href="" onClick={()=>{ window.open("https://www.apprentices.in", '_blank'); }}>
                       <img alt="apprentices.in" title="Apprentices" src={appr} />
                   </a>
               </div>
               <div className="inline-block companies-logo-footer">
-                  <a href="http://www.schoolguru.in" target="_blank">
+                  <a href="" onClick={()=>{ window.open("http://www.schoolguru.in", '_blank'); }}>
                       <img alt="schoolguru.in" title="Schoolguru" src={schoolguru} />
                   </a>
               </div>
@@ -129,18 +129,17 @@ class Footer extends Component {
 
         <div className="mob_alternate">
             <div className="nav-footer-corp margin_bottom_20">
-              <a href="https://tlconnect.teamlease.com/SecureLogin" className="text-decoration corp-text">
+              <a href="" className="text-decoration corp-text" onClick={()=>{ window.open("https://tlconnect.teamlease.com/SecureLogin", '_blank'); }}>
                 Associate Login - Login Now
               </a>
             </div>
             <div className="nav-footer-corp">Corporate Website -
-							<a href="https://www.teamleasegroup.com" className="text-decoration corp-text">
+							<a href="" className="text-decoration corp-text" onClick={()=>{ window.open("https://www.teamleasegroup.com", '_blank'); }}>
 								TeamLeaseGroup.com
 							</a>
 						</div>
             <div className="copyright-text font-12">Copyright © 2018 TeamLease. All rights reserved</div>
         </div>
-
       </footer>
     );
   }
