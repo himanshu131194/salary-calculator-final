@@ -20,21 +20,21 @@ class Footer extends Component {
   						<div className="inline-block padding_top_15 padding_bottom_15">
   							<div className="fotter-bottom-links">
   								<div className="contact margin_bottom_12">Corporate Website<a className="footer-hover associate_login float-right" href="https://tlconnect.teamlease.com/SecureLogin">Associate Login</a> </div>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com">TeamLeaseGroup.com</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com">TeamLeaseGroup.com</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/about-teamlease">About Us</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/about-teamlease">About Us</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/temporary-staffing">Services</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/temporary-staffing">Services</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/resources/reports/18">Resources</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/resources/reports/18">Resources</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/node/983">Media</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/node/983">Media</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/overview">Investors</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/overview">Investors</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/blogs">Blog</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/blogs">Blog</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/current-openings">Work with Us</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/current-openings">Work with Us</a>
   							</div>
   							<div className="fotter-bottom-links margin_top_30 width_340">
   								<div className="contact margin_bottom_12">Information</div>
@@ -44,7 +44,7 @@ class Footer extends Component {
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
   								<a className="footer-hover color-777576 " href="http://dev.teamleasejobs.com/faq">FAQ</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="https://qa.teamleasegroup.com/blogs">Blog</a>
+  								<a className="footer-hover color-777576 " href="https://www.teamleasegroup.com/blogs">Blog</a>
   							</div>
   						</div>
 

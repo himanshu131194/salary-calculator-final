@@ -9,7 +9,7 @@ class Header extends Component {
         <div className="header-section">
           <div className="center-align">
             <div className="main-logo inline-block">
-              <a href="http://dev.teamleasejobs.com">
+              <a href="http://www.teamleasejobs.com">
                 <img title="Teamlease -No.1 website" alt="Teamlease logo - No.1 website" src={teamlease} />
               </a>
             </div>
