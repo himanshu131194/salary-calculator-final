@@ -38,11 +38,11 @@ class Footer extends Component {
   							</div>
   							<div className="fotter-bottom-links margin_top_30 width_340">
   								<div className="contact margin_bottom_12">Information</div>
-  								<a className="footer-hover color-777576 " href="/contact-us">Contact Us</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("http://www.teamlease.com/contact-us", '_blank'); }}>Contact Us</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="/business-enquiry?tlfootr">Business Enquiries</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("http://www.teamlease.com/business-enquiry?tlfootr", '_blank'); }}>Business Enquiries</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
-  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("http://www.teamleasejobs.com/faq", '_blank'); }}>FAQ</a>
+  								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("http://www.teamlease.com/faq", '_blank'); }}>FAQ</a>
   								<span className="padding-right-10 padding-left-10 color-17284e">|</span>
   								<a className="footer-hover color-777576 " href="" onClick={()=>{ window.open("https://www.teamleasegroup.com/blogs", '_blank'); }}>Blog</a>
   							</div>
