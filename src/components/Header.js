@@ -9,7 +9,7 @@ class Header extends Component {
         <div className="header-section">
           <div className="center-align">
             <div className="main-logo inline-block">
-              <a href="" onClick={(e)=>{ window.open("https://www.teamlease.com", '_blank'); }}>
+              <a href="https://www.teamlease.com" onClick={(e)=>{ e.preventDefault(); window.open("https://www.teamlease.com", '_blank'); }}>
                 <img title="Teamlease -No.1 website" alt="Teamlease logo - No.1 website" src={teamlease} />
               </a>
             </div>
