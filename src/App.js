@@ -140,7 +140,7 @@ class App extends Component {
          <div className="result_title">Take next step of your career and elevate earning Potential</div>
          <div className="result_content">
            <img className="result_img" alt="graph" src={computer} />
-           <p className="result_text">Get a free, personalized salary estimate based on today's job market</p>
+           <p className="result_text">Get a free, personalized salary estimate based on todays job market</p>
          </div>
        </div>
     )
@@ -202,6 +202,21 @@ class App extends Component {
   }
 
 
+  validateAllFormFields(location, designation, experience){
+       let flag = true;
+       if(location.value==''){
+          this.validateForm(location, 0); flag= false;
+       }
+       if(designation.value==''){
+          this.validateForm(designation, 0); flag= false;
+       }
+       if(experience.value==''){
+          this.validateForm(experience, 0); flag= false;
+       }
+       return flag;
+  }
+
+
   onFormSubmit(e){
     e.preventDefault();
     let loc = e.target.getElementsByClassName('location')[0];
@@ -212,15 +227,18 @@ class App extends Component {
     this.state.designations.map((result)=>{
        if(result.toLowerCase()===x.toLowerCase()) flag=false;
     })
+
+    if(!this.validateAllFormFields(loc, desig, exp)) return false;
+
     if(desig.value=='')
-        return this.validateForm(desig, 0)
+       return this.validateForm(desig, 0)
     else if(flag)
-        return this.validateForm(desig, 2)
+         this.validateForm(desig, 2)
     else
         this.validateForm(desig, 1)
 
     if(loc.value=='')
-        return this.validateForm(loc, 0)
+       return this.validateForm(loc, 0)
     else
         this.validateForm(loc, 1)
 
