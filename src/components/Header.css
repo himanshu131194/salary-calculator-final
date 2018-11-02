@@ -3,21 +3,18 @@
 }
 
 .header-section{
-  background-color: #fff;
-  /* min-width: 1250px; */
-  height: 85px;
-  border-bottom: 1px solid #003399;
+  background-color: #003399;
+  height: 77px;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  background: #003399;
   width:100%;
 }
 
 .header-section .main-logo img {
     vertical-align: baseline;
     position: absolute;
-    top: 12px;
+    top: 10px;
     width: 186px;
     height: 50px;
 }

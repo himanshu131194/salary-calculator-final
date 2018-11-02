@@ -269,7 +269,7 @@ input.designation{
   color:white;
 }
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .form-inline input {
       margin: 10px 0;
     }
